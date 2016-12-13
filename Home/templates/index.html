@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
+{% load staticfiles %}
 <html>
 <head>
 <title>Home</title>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="{% static 'css/bootstrap.css'%}" rel="stylesheet" type="text/css" media="all">
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.11.0.min.js"></script>
+<script src="{% static 'js/jquery-1.11.0.min.js'%}"></script>
 <!-- Custom Theme files -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="{% static '/css/style.css'%}" rel="stylesheet" type="text/css" media="all"/>
 <!-- Custom Theme files -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,8 +16,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--Google Fonts-->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="{% static 'js/move-top.js'%}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js'%}"></script>
 	<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -26,7 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 	</script>
 <!-- //end-smoth-scrolling -->
-<script src="js/menu_jquery.js"></script>
+<script src="{% static 'js/menu_jquery.js'%}"></script>
 </head>
 <body>
 <!--header start here-->
@@ -36,10 +37,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!---->
 					<div class="header-logo">
 						<div class="logo">
-						<a href="index.html"><img src="images/lo1.png" alt="" ></a>
+						<a href="index.html"><img src="{% static 'images/lo1.png'%}" alt="" ></a>
 						</div>
 						<div class="top-nav">
-							<span class="icon"><img src="images/menu.png" alt=""> </span>
+							<span class="icon"><img src="{% static 'images/menu.png'%}" alt=""> </span>
 							<ul>
 								<li ><a href="index.html">Home</a> </li>
 								<li ><a href="about.html" >About  </a> </li>
@@ -63,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li ><a href="index.html" >Home</a> </li>
 						<li ><a href="about.html">About  </a> </li>
 						<li><a href="typo.html">Short Codes</a></li>
-						<li><a href="index.html"> <img src="images/lo1.png" alt=""> </a></li>
+						<li><a href="index.html"> <img src="{% static 'images/lo1.png'%}" alt=""> </a></li>
 						<li><a href="galley.html">Gallery </a></li>
 						<li><a href="contact.html">Contact</a></li>
 						<li><div class="header-login">
@@ -85,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											            	</fieldset>
 											            <span><a href="#">Forgot your password?</a></span>
 												 </form>
-									        </div>
+									        </d iv>
 									  </div>
 								   </div>
 		                         </div>	</li>
@@ -97,15 +98,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<p>Porro Neque quisquam dolorem ipsum </p>
 				<div class="bann-main">
 					<div class="col-md-4 bann-grid">
-						<img src="images/i1.png" alt="">
+						<img src="{% static 'images/i1.png'%}" alt="">
 						<h4>Porro Neque</h4>
 					</div>
 					<div class="col-md-4 bann-grid">
-							<img src="images/i2.png" alt="">
+							<img src="{% static 'images/i2.png'%}" alt="">
 						<h4>Porro Neque</h4>
 					</div>
 					<div class="col-md-4 bann-grid">
-							<img src="images/i3.png" alt="">
+							<img src="{% static 'images/i3.png'%}" alt="">
 						<h4>Porro Neque</h4>
 				</div>
 				<div class="clearfix"> </div>
@@ -121,11 +122,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="banner-info-main">
 			<div class="col-md-6 bann-info-left">
-				<img src="images/2.jpg" alt="" class="img-responsive">
+				<img src="{% static 'images/2.jpg'%}" alt="" class="img-responsive">
 				<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur</p>
 			</div>
 			<div class="col-md-6 bann-info-left">
-				<img src="images/balance.jpg" alt="" class="img-responsive">
+				<img src="{% static 'images/balance.jpg'%}" alt="" class="img-responsive">
 				<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur</p>
 			</div>
 		  <div class="clearfix"> </div>
@@ -157,10 +158,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="we-work-bottom">
 				 <div class="col-md-6 we-work-left">
 				 	<div class="col-md-6 we-left-img1">
-				 		<img src="images/w1.jpg" alt="" class="img-responsive">
+				 		<img src="{% static 'images/w1.jpg'%}" alt="" class="img-responsive">
 				 	</div>
 				 	<div class="col-md-6 we-left-img2">
-				 		<img src="images/w2.jpg" alt="" class="img-responsive">
+				 		<img src="{% static 'images/w2.jpg'%}" alt="" class="img-responsive">
 				 	</div>
 				 	<div class="clearfix"> </div>
 				 </div>
@@ -183,22 +184,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  </div>
 			  <div class="features-bottom">
 			  	 <div class="col-md-3 feature-grid">
-			  	 	<img src="images/f1.jpg" alt="" class="img-responsive">
+			  	 	<img src="{% static 'images/f1.jpg'%}" alt="" class="img-responsive">
 			  	 	<h4>voluptatem accusantium</h4>
 			  	 	<p>quae ab illo inventore veritatis et quasi architecto beatae vitae</p>
 			  	 </div>
 			  	  <div class="col-md-3 feature-grid">
-			  	 	<img src="images/f2.jpg" alt="" class="img-responsive">
+			  	 	<img src="{% static 'images/f2.jpg'%}" alt="" class="img-responsive">
 			  	 	<h4>voluptatem accusantium</h4>
 			  	 	<p>quae ab illo inventore veritatis et quasi architecto beatae vitae</p>
 			  	 </div>
 			  	  <div class="col-md-3 feature-grid">
-			  	 	<img src="images/f3.jpg" alt="" class="img-responsive">
+			  	 	<img src="{% static 'images/f3.jpg'%}" alt="" class="img-responsive">
 			  	 	<h4>voluptatem accusantium</h4>
 			  	 	<p>quae ab illo inventore veritatis et quasi architecto beatae vitae</p>
 			  	 </div>
 			  	  <div class="col-md-3 feature-grid">
-			  	 	<img src="images/f4.jpg" alt="" class="img-responsive">
+			  	 	<img src="{% static 'images/f4.jpg'%}" alt="" class="img-responsive">
 			  	 	<h4>voluptatem accusantium</h4>
 			  	 	<p>quae ab illo inventore veritatis et quasi architecto beatae vitae</p>
 			  	 </div>
@@ -214,7 +215,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="footer-main">
 			 <div class="col-md-4 ftr-grid">
 			 	<div class="ftr-grid-left">
-			 	    <img src="images/location.png" alt="">
+			 	    <img src="{% static 'images/location.png'%}" alt="">
 			 	</div>
 			 	<div class="ftr-grid-right">
 			 		<p>7556 gt globel Place <span class="local">CD-road,M 07 435.</span></p>
@@ -223,7 +224,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 </div>
 			 <div class="col-md-4 ftr-grid">
 			 	 <div class="ftr-grid-left">
-			 	    <img src="images/email.png" alt="">
+			 	    <img src="{% static 'images/email.png'%}" alt="">
 			 	</div>
 			 	<div class="ftr-grid-right">
 			 		<p><a href="#">mail@user.com</a><span class="local">saepe eveniet</span></p>
@@ -232,7 +233,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 </div>
 			 <div class="col-md-4 ftr-grid">
 			 	 <div class="ftr-grid-left">
-			 	    <img src="images/phone.png" alt="">
+			 	    <img src="{% static 'images/phone.png'%}" alt="">
 			 	</div>
 			 	<div class="ftr-grid-right">
 			 		<p>+1234 567 9871 <span class="local">+1204 859 6598</span></p>

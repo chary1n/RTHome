@@ -7,7 +7,7 @@ from Home.models import Product
 
 def index(request):
 
-    return render(request, 'Home/html/index2.html',{'products':Product.objects.all(),
+    return render(request, 'index.html',{'products':Product.objects.all(),
                                                     })
 
 def product_new(request):
