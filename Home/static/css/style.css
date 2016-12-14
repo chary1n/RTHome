@@ -1,6 +1,6 @@
 h4, h5, h6,
 h1, h2, h3 {margin: 0;}
-ul, ol {margin: 0;}
+ul, ol {margin: 0;background-color: rgba(30,30,30,0.7);}
 p {margin: 0;}
 html, body{
   font-family: 'Roboto-Regular';
