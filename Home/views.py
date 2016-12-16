@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+import json
+
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.shortcuts import render
@@ -12,14 +15,15 @@ def index(request):
                                                     })
 def login(request):
     if request.method == 'POST':
-        user = request.user
-        auth_user = authenticate(username=user.username, password=user.password)
+        body = json.loads(request.)
+        auth_user = authenticate(username=body.username, password=body.password)
         if auth_user is not None:
-            return render(request, 'form.html',{'msg':True})
+            return render(request, 'index.html')
         else:
-            return render(request, 'form.html',{'msg':False})
+            return render(request, 'login.html',{'msg':u'用戶或密碼不正確!'})
 
-
+def tologin(request):
+    return render(request, 'login.html')
 
 def product_new(request):
     form = ProductForm()
