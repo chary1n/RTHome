@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="{% static 'assets/font-awesome/css/font-awesome.min.css'%}">
 		<link rel="stylesheet" href="{% static 'assets/css/form-elements.css'%}">
         <link rel="stylesheet" href="{% static 'assets/css/style.css'%}">
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+{#        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>#}
+{#        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>#}
             <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="{% static '/ico/favicon.png'%}">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'assets/ico/apple-touch-icon-144-precomposed.png'%}">
@@ -50,25 +50,29 @@
                         		</div>
                             </div>
                             <div class="form-bottom">
-			                    <form role="form" action="{% url 'login' %}" method="post" class="login-form">
+			                    <form role="form" name="login-form" id="login-form" method="post" class="login-form">
                                     {% csrf_token %}
 			                    	<div class="form-group">
 			                    		<label class="sr-only" for="form-username">Username</label>
 			                        	<input type="text" name="username" onmousedown="removeLoginErrorAlertWhenFouces();" placeholder="Username..." class="form-username form-control" id="username">
-			                        </div>0
+			                        </div>
 			                        <div class="form-group">
 			                        	<label class="sr-only" for="form-password">Password</label>
 			                        	<input type="password" name="password" onmousedown="removeLoginErrorAlertWhenFouces();" placeholder="Password..." class="form-password form-control" id="password">
 			                        </div>
-                                        <button type="submit" onmousedown="removeLoginErrorAlertWhenFouces();" class="btn">Sign in!</button>
+                                        <button type="submit" id="login-btn" name="login-btn" onmousedown="removeLoginErrorAlertWhenFouces();" class="btn">Sign in!</button>
+                                    <div class="pull-right">
+                            <a href="#">Register!</a>
+                        </div>
 			                    </form>
 		                    </div>
-                            <button type="button" class="btn-link-2">Register!</button>
-                            {% if msg %}
+                                                                                                {% if msg %}
+
                                     <div class="alert alert-danger" role="alert" id="login_error_alert">
                                         <strong>出錯啦！</strong> {{ msg }}
                                      </div>
-                            {% endif %}
+                                                                                                {% endif %}
+
                         </div>
                     </div>
                 </div>
@@ -79,6 +83,28 @@
 
         <!-- Javascript -->
         {% block endjsfile %}
+            <script>
+            $(document).ready(function () {
+                $.ajaxSetup({data:{csrfmiddlewaretoken: '{{ csrf_token }}'}});
+                $('#login-form').submit(function () {
+                    var username = $('#username').val()
+                    var password = $('#password').val()
+                    $.ajax({
+                        type:"POST",
+                        data:{username:username, password:password},
+                        dataType:'json',
+                        url:{% url 'login' %},
+                        success:function (msg) {
+                            alert(msg.msg)
+                        },
+                        error: function (msg) {
+                            alert('failed')
+                        }
+                    });
+                    return false;
+                });
+            });
+            </script>
             <script src="{% static 'assets/js/jquery-1.11.1.min.js' %}"></script>
             <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
             <script src="{% static 'assets/js/jquery.backstretch.min.js' %}"></script>

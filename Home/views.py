@@ -3,6 +3,7 @@ import json
 
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
@@ -15,12 +16,12 @@ def index(request):
                                                     })
 def login(request):
     if request.method == 'POST':
-        body = json.loads(request.)
-        auth_user = authenticate(username=body.username, password=body.password)
+        body = request.POST
+        auth_user = authenticate(username=body['username'], password=body['password'])
         if auth_user is not None:
             return render(request, 'index.html')
         else:
-            return render(request, 'login.html',{'msg':u'用戶或密碼不正確!'})
+            return HttpResponse(json.dumps({'msg':u'用戶或密碼不正確!'}))#render(request, '',{'msg':u'用戶或密碼不正確!'})
 
 def tologin(request):
     return render(request, 'login.html')
